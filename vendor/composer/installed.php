@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '303eeff064a1dbba697332bcf4bdff116144640e',
+        'reference' => 'd66b08dbef51abb082d3c81cec02e768934a8f6d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '303eeff064a1dbba697332bcf4bdff116144640e',
+            'reference' => 'd66b08dbef51abb082d3c81cec02e768934a8f6d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -102,6 +102,15 @@
             'provided' => array(
                 0 => '1.0|2.0|3.0',
             ),
+        ),
+        'symfony/asset' => array(
+            'pretty_version' => 'v7.1.1',
+            'version' => '7.1.1.0',
+            'reference' => '8970de4a0cedd34e097c0f5c502a614780b9ca43',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/asset',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/cache' => array(
             'pretty_version' => 'v7.1.1',
