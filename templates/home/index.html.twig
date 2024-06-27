@@ -5,26 +5,26 @@
 {% endblock %}
 
 {% block body %}
-    <form class="position-absolute top-50 start-50 translate-middle bg-body-secondary p-4 pt-0 rounded border border-secondary-subtle bg-opacity-75 w-75 shadow-lg">
+    <form class="position-absolute top-50 start-50 translate-middle bg-body-secondary p-4 pt-0 rounded border border-secondary-subtle bg-opacity-75 w-75 shadow-lg" method="post">
         <div class="row no-margin">
             <div class="col-12">
                 <div class="row no-margin">
                     <div class="col-md-4 pt-4">
                         <div class="form-group">
                             <span class="form-label">Check In</span>
-                            <input class="form-control" type="date" required="" value="{{ 'now'|date('Y-m-d') }}">
+                            <input name="debut" class="form-control" type="date" required="" value="{{ 'now'|date('Y-m-d') }}" min="{{ 'now'|date('Y-m-d') }}">
                         </div>
                     </div>
                     <div class="col-md-4 pt-4">
                         <div class="form-group">
                             <span class="form-label">Check out</span>
-                            <input class="form-control" type="date" required="" value="{{ 'now'|date('Y-m-d') }}">
+                            <input name="fin" class="form-control" type="date" required="" value="{{ '3 day'|date('Y-m-d') }}" min="{{ 'now'|date('Y-m-d') }}">
                         </div>
                     </div>
                     <div class="col-md-2 pt-4">
                         <div class="form-group">
                             <span class="form-label">Adultes</span>
-                            <select class="form-select">
+                            <select name="nbAdulte" class="form-select">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -34,7 +34,7 @@
                     <div class="col-md-2 pt-4">
                         <div class="form-group">
                             <span class="form-label">Enfants</span>
-                            <select class="form-select">
+                            <select name="nbEnfant" class="form-select">
                                 <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -52,4 +52,19 @@
             </div>
         </div>
     </form>
+
+    {% if units is defined %}
+        {% if units|length == 0 %}
+            <div class="toast-container top-0 start-50 translate-middle-x p-3">
+                <div class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            Aucune disponibilité. Veuillez renseigner les dates de votre séjour pour voir les disponibilités
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
 {% endblock %}

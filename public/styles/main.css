@@ -1,6 +1,12 @@
-#container {
+#container.home {
     background-image: url('../images/background.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+ul#menu {
+    list-style-type: none;
+    margin: 0 0 0 -40px;
+    padding: 0;
 }

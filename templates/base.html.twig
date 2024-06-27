@@ -11,12 +11,19 @@
         {% endblock %}
     </head>
     <body>
-        <div id="container" class="container-fluid vh-100">
+        {% set classContainer = "ps-5" %}
+        {% if app.request.attributes.get("_route") starts with 'app_home' %}
+            {% set classContainer = "home" %}
+        {% endif %}
+
+        <div id="container" class="container-fluid vh-100 position-relative {{ classContainer }}">
+            {{ include('menu.html.twig') }}
             {% block body %}{% endblock %}
         </div>
         {% block javascripts %}
             <script src="{{ asset('js/jquery.js') }}"></script>
             <script src="{{ asset('js/bootstrap.js') }}"></script>
+            <script src="{{ asset('js/script.js') }}"></script>
         {% endblock %}
     </body>
 </html>
